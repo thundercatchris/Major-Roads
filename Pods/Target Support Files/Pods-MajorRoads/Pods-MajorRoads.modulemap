@@ -1,0 +1,6 @@
+framework module Pods_MajorRoads {
+  umbrella header "Pods-MajorRoads-umbrella.h"
+
+  export *
+  module * { export * }
+}

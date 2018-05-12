@@ -9,6 +9,9 @@
 import UIKit
 import CoreData
 
+let appID = "XXXXXXXX"
+let apiKey = "XXXXXXXXXXXXXXXXXXXXXXXXXX"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

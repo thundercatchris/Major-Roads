@@ -1,5 +1,5 @@
 //
-//  MajorRoadsTests.swift
+//  FavouritesViewModelControllerTests.swift
 //  MajorRoadsTests
 //
 //  Created by Cerebro on 12/05/2018.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import MajorRoads
 
-class MajorRoadsTests: XCTestCase {
+class FavouritesViewModelControllerTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -21,16 +21,18 @@ class MajorRoadsTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testIDStringFormat() {
+        let request = FavouritesViewModelController()
+        let road = "A2"
+        let index = 1
+        XCTAssertEqual(request.roadStringIdFormat(index: index, id: road), ",A2")
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testIDStringFormatFail() {
+        let request = FavouritesViewModelController()
+        let road = "A2"
+        let index = 0
+        XCTAssertNotEqual(request.roadStringIdFormat(index: index, id: road), ",A2")
     }
     
 }
