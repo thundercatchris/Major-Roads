@@ -16,4 +16,4 @@ You can enter any of the below gyms to test this, more than one gym added will d
 
 <img src=/images/IMG_1868.PNG width="300" height="650">
 <img src=/images/IMG_1869.PNG width="300" height="650">
-<img src=/images/screenShot.png width="300" height="135">
+<img src=/images/screenShot1.png width="300" height="135">
