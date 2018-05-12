@@ -39,18 +39,20 @@ Some Unit tests have been included and can be run individually or as an entire c
 ## How to
 
 
-### Search
 
-<img src=/images/IMG_1868.PNG width="300" height="650">
+### Search
 
 Search for a major road from the search field
 
 Favourite roads can be added by pressing the 'Star' button next to a returned road.
 
+<img src=/images/IMG_1868.PNG width="300" height="650">
+
+
 
 
 ### Favourites
 
-<img src=/images/IMG_1869.PNG width="300" height="650">
-
 The second tab displays any favourite roads you have added. these can be selected for further inforamtion and removed if required.
+
+<img src=/images/IMG_1869.PNG width="300" height="650">
