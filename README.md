@@ -18,6 +18,8 @@ In order to use it you will need to register for a developer key here: https://a
 
 Clone the project. change to the installation directory in terminal and run "pod install".
 
+Open the MajorRoads.xcworkspace project
+
 Replace the hashed values with the credentials you obtained from the TFL portal
 
 <img src=/images/screenShot1.png width="300" height="135">
