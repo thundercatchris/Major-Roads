@@ -26,8 +26,7 @@ Replace the hashed values with the credentials you obtained from the TFL portal
 
 ### Testing
 
-Some Unit tests have been included and can be run individually or as an entire class. The use of Core Data/Singletons has prevented some tests from being included.
-
+Some Unit tests have been included and can be run individually or as an entire class. 
 
 
 ### Built With
