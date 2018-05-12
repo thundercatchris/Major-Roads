@@ -2,6 +2,7 @@
 
 TFL test
 
+
 ### Prerequisites
 
 Cocpods need to be installed
@@ -12,23 +13,31 @@ Xcode 9.2 or higher
 
 In order to use it you will need to register for a developer key here: https://api-portal.tfl.gov.uk/ 
 
+
 ### Installing
 
 Clone the project. change to the installation directory in terminal and run "pod install".
 
 Replace the hashed values with the credentials you obtained from the TFL portal
+
 <img src=/images/screenShot1.png width="300" height="135">
+
+
 
 ### Testing
 
 Some Unit tests have been included and can be run individually or as an entire class. The use of Core Data/Singletons has prevented some tests from being included.
+
+
 
 ### Built With
 
 * [Alamofire](https://github.com/Alamofire/Alamofire) - The http request framework used
 
 
+
 ## How to
+
 
 ### Search
 
@@ -37,6 +46,7 @@ Some Unit tests have been included and can be run individually or as an entire c
 Search for a major road from the search field
 
 Favourite roads can be added by pressing the 'Star' button next to a returned road.
+
 
 
 ### Favourites
