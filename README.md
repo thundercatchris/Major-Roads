@@ -1,19 +1,46 @@
 # Major-Roads
 
-Pet project
+TFL test
 
-Add Leeds Pokemon Gyms you want to track 
+### Prerequisites
 
-## Example with test data
+Cocpods need to be installed
+
+A Device or iPhone simulator running iOS 10.3 or higher
+
+Xcode 9.2 or higher
+
+In order to use it you will need to register for a developer key here: https://api-portal.tfl.gov.uk/ 
+
+### Installing
+
+Clone the project. change to the installation directory in terminal and run "pod install".
+
+Replace the hashed values with the credentials you obtained from the TFL portal
+<img src=/images/screenShot1.png width="300" height="135">
+
+### Testing
+
+Some Unit tests have been included and can be run individually or as an entire class. The use of Core Data/Singletons has prevented some tests from being included.
+
+### Built With
+
+* [Alamofire](https://github.com/Alamofire/Alamofire) - The http request framework used
 
 
-You can enter any of the below gyms to test this, more than one gym added will display a better map
+## How to
 
-(note raids will only show when there is a live raid happening at that gym)
-
-
-
+### Search
 
 <img src=/images/IMG_1868.PNG width="300" height="650">
+
+Search for a major road from the search field
+
+Favourite roads can be added by pressing the 'Star' button next to a returned road.
+
+
+### Favourites
+
 <img src=/images/IMG_1869.PNG width="300" height="650">
-<img src=/images/screenShot1.png width="300" height="135">
+
+The second tab displays any favourite roads you have added. these can be selected for further inforamtion and removed if required.
