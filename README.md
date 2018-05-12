@@ -35,11 +35,15 @@ Some Unit tests have been included and can be run individually or as an entire c
 * CoreData - For favourite persistence 
 
 
-
+&nbsp;
+&nbsp;
+&nbsp;
 
 
 # How to
 
+&nbsp;
+&nbsp;
 
 
 ## Search
@@ -50,7 +54,9 @@ Favourite roads can also be added by pressing the 'Star' button next to a return
 
 <img src=/images/IMG_1868.PNG width="300" height="650">
 
-
+&nbsp;
+&nbsp;
+&nbsp;
 
 
 ## Favourites
