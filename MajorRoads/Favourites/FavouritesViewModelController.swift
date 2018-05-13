@@ -23,7 +23,11 @@ class FavouritesViewModelController {
     
     func getFavourites() {
         roads.removeAll()
-        requestRoadInfo(searchRoad: roadString())
+        
+        let existingRoads = roadString()
+        if existingRoads.count != 0 {
+            requestRoadInfo(searchRoad: existingRoads)
+        }
         self.delegateReload?.reloadTable()
     }
     
