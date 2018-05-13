@@ -109,8 +109,10 @@ class SearchViewController: UIViewController, UISearchBarDelegate, setupFavourit
     }
     
     func  setupFavouriteButton() {
-        DispatchQueue.main.async() {
-            self.favouriteButton.imageView?.image = (self.modelController.road?.isFavourite)! ? UIImage(named: "favouriteSelected") : UIImage(named: "favourite")
+        if self.modelController.road != nil {
+            DispatchQueue.main.async() {
+                self.favouriteButton.imageView?.image = (self.modelController.road?.isFavourite)! ? UIImage(named: "favouriteSelected") : UIImage(named: "favourite")
+            }
         }
     }
     

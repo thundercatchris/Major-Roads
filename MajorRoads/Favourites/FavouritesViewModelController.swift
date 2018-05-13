@@ -49,10 +49,12 @@ class FavouritesViewModelController {
     
     func roadString() -> String {
         var roadsString = ""
-        for i in 0...((favourite.favouriteIds?.count)! - 1) {
-            let item = favourite.favouriteIds![i]
-            if let id = item.value(forKey: "id") as? String {
-                roadsString += roadStringIdFormat(index: i, id: id)
+        if favourite.favouriteIds != nil {
+            for i in 0...((favourite.favouriteIds?.count)! - 1) {
+                let item = favourite.favouriteIds![i]
+                if let id = item.value(forKey: "id") as? String {
+                    roadsString += roadStringIdFormat(index: i, id: id)
+                }
             }
         }
         return roadsString
