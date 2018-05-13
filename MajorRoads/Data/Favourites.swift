@@ -9,9 +9,14 @@
 import Foundation
 import CoreData
 
+protocol favouritesUpdated {
+    func favouritesUpdated()
+}
+
 class Favourites {
     
     var favouriteIds:[NSManagedObject]?
+    var delegate:favouritesUpdated?
     
     static let sharedInstance: Favourites = Favourites()
     let coreData = CoreDataCalls.sharedInstance
@@ -23,6 +28,7 @@ class Favourites {
     func getIds() {
         coreData.getFavourites { (returnedIds) in
             self.favouriteIds = returnedIds
+            self.delegate?.favouritesUpdated()
         }
     }
     

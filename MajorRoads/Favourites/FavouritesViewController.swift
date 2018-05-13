@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FavouritesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, reloadTable, displayError {
+class FavouritesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, reloadTable, displayError, favouritesUpdated {
     
     let modelController = FavouritesViewModelController()
     
@@ -20,6 +20,9 @@ class FavouritesViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.dataSource = self
         modelController.delegateReload = self
         modelController.delegateError = self
+        
+        modelController.getFavourites()
+        modelController.favourite.delegate = self
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -47,7 +50,7 @@ class FavouritesViewController: UIViewController, UITableViewDelegate, UITableVi
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    func favouritesUpdated() {
         modelController.getFavourites()
     }
     

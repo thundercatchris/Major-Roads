@@ -51,7 +51,6 @@ class SearchViewModelController {
                 if let id = item.value(forKey: "id") as? String {
                     if id == road?.name {
                         road?.isFavourite = true
-                        self.roadFoundDelegate?.roadFound(road: road!)
                         break
                     }
                 }

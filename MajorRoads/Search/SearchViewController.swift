@@ -25,10 +25,9 @@ class SearchViewController: UIViewController, UISearchBarDelegate, setupFavourit
     override func viewDidLoad() {
         super.viewDidLoad()
         // when selecting a favourite from the table, this view is reused starting with an existing road object
-        if let road = modelController.road {
+        if modelController.road != nil {
             searchBar.isHidden = true
             title = ""
-            roadFound(road: road)
         }
         searchBar.delegate = self
         searchBar.sizeToFit()
@@ -38,6 +37,20 @@ class SearchViewController: UIViewController, UISearchBarDelegate, setupFavourit
         modelController.errorDelegate = self
         modelController.setupFavouriteDelegate = self
         modelController.roadFoundDelegate = self
+        
+        
+        // pre load favourites before being selected
+        if let viewControllers = self.tabBarController?.viewControllers {
+            for viewController in viewControllers {
+                if viewController == viewControllers[1] {
+                    if let controllers = viewController as? UINavigationController {
+                        let favouritesView = controllers.viewControllers[0] as? FavouritesViewController
+                        _ = favouritesView?.view
+                    }
+                }
+                
+            }
+        }
         
     }
     
@@ -62,26 +75,33 @@ class SearchViewController: UIViewController, UISearchBarDelegate, setupFavourit
     
     func clearView() {
         modelController.road = nil
-        self.errorView.isHidden = true
-        self.detailView.isHidden = true
+        DispatchQueue.main.async {
+            self.errorView.isHidden = true
+            self.detailView.isHidden = true
+        }
     }
     
     func roadFound(road: Road) {
-        self.errorView.isHidden = true
-        self.detailView.isHidden = false
-        let road = self.modelController.road
-        if road != nil {
-            self.displayName.text = road?.name
-            self.statusSeverity.text = road?.severity
-            self.statusSeverityDescription.text = road?.description
+        DispatchQueue.main.async {
+            self.errorView.isHidden = true
+            self.detailView.isHidden = false
+            let road = self.modelController.road
+            if road != nil {
+                self.displayName.text = road?.name
+                self.statusSeverity.text = road?.severity
+                self.statusSeverityDescription.text = road?.description
+            }
         }
         setupFavouriteButton()
+        
     }
     
     func displayError(error:String){
-        self.errorView.isHidden = false
-        self.detailView.isHidden = true
-        self.errorLabel.text = error
+        DispatchQueue.main.async {
+            self.errorView.isHidden = false
+            self.detailView.isHidden = true
+            self.errorLabel.text = error
+        }
     }
     
     @IBAction func favouriteButtonPressed(_ sender: Any) {
