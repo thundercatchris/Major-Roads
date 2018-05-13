@@ -56,7 +56,7 @@ Search for a major road from the search field to display its current status.
 
 Favourite roads can also be added by pressing the 'Star' button next to a returned road and then viewed in the Favourites tab.
 
-<img src=/images/IMG_1868.PNG width="300" height="650">
+<img src=/images/search.png width="300" height="292">
 
 &nbsp;
 &nbsp;
@@ -68,5 +68,5 @@ Favourite roads can also be added by pressing the 'Star' button next to a return
 As the API allows for multiple roads to be requested at the same time, a Favourites view has been included.
 The second tab displays any favourite roads you have added from previous searches. these can be selected for further information and removed from favourites if required.
 
-<img src=/images/IMG_1869.PNG width="300" height="650">
+<img src=/images/fav.png width="300" height="233">
 
