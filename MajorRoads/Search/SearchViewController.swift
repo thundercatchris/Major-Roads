@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchViewController: UIViewController, UISearchBarDelegate, setupFavouriteButton, displayError, roadFound {
+class SearchViewController: UIViewController, UISearchBarDelegate, displayError, roadFound {
     
     
     @IBOutlet weak var searchBar: UISearchBar!
@@ -35,7 +35,6 @@ class SearchViewController: UIViewController, UISearchBarDelegate, setupFavourit
         self.definesPresentationContext = true
         
         modelController.errorDelegate = self
-        modelController.setupFavouriteDelegate = self
         modelController.roadFoundDelegate = self
         
         
@@ -51,12 +50,24 @@ class SearchViewController: UIViewController, UISearchBarDelegate, setupFavourit
                 
             }
         }
-        
+        let name = Notification.Name(checkFavouriteObserverKey)
+        NotificationCenter.default.addObserver(self, selector: #selector(favouritesChanged(notification:)), name: name, object: nil)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        if let name = modelController.road?.name {
-            modelController.requestRoadInfo(searchRoad: name)
+    
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func favouritesChanged(notification: NSNotification) {
+        if let info = notification.userInfo {
+            for (_,value) in info {
+                if (value as? String) == modelController.road?.name {
+                    modelController.road?.isFavourite = !(modelController.road?.isFavourite)!
+                    setupFavouriteButton()
+                }
+            }
         }
     }
     
@@ -66,6 +77,10 @@ class SearchViewController: UIViewController, UISearchBarDelegate, setupFavourit
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        search()
+    }
+    
+    func search() {
         if searchBar.text != nil, let road = searchBar.text {
             clearView()
             modelController.requestRoadInfo(searchRoad: road)
@@ -75,33 +90,26 @@ class SearchViewController: UIViewController, UISearchBarDelegate, setupFavourit
     
     func clearView() {
         modelController.road = nil
-        DispatchQueue.main.async {
-            self.errorView.isHidden = true
-            self.detailView.isHidden = true
-        }
+        self.errorView.isHidden = true
+        self.detailView.isHidden = true
     }
     
     func roadFound(road: Road) {
-        DispatchQueue.main.async {
-            self.errorView.isHidden = true
-            self.detailView.isHidden = false
-            let road = self.modelController.road
-            if road != nil {
-                self.displayName.text = road?.name
-                self.statusSeverity.text = road?.severity
-                self.statusSeverityDescription.text = road?.description
-            }
+        self.errorView.isHidden = true
+        self.detailView.isHidden = false
+        let road = self.modelController.road
+        if road != nil {
+            self.displayName.text = road?.name
+            self.statusSeverity.text = road?.severity
+            self.statusSeverityDescription.text = road?.description
         }
         setupFavouriteButton()
-        
     }
     
     func displayError(error:String){
-        DispatchQueue.main.async {
-            self.errorView.isHidden = false
-            self.detailView.isHidden = true
-            self.errorLabel.text = error
-        }
+        self.errorView.isHidden = false
+        self.detailView.isHidden = true
+        self.errorLabel.text = error
     }
     
     @IBAction func favouriteButtonPressed(_ sender: Any) {

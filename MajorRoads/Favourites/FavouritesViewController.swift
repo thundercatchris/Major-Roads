@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FavouritesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, reloadTable, displayError, favouritesUpdated {
+class FavouritesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, reloadTable, displayError {
     
     let modelController = FavouritesViewModelController()
     
@@ -22,7 +22,9 @@ class FavouritesViewController: UIViewController, UITableViewDelegate, UITableVi
         modelController.delegateError = self
         
         modelController.getFavourites()
-        modelController.favourite.delegate = self
+        
+        let name = Notification.Name(favouritesObserverKey)
+        NotificationCenter.default.addObserver(self, selector: #selector(favouritesChanged), name: name, object: nil)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,14 +45,18 @@ class FavouritesViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail",
-            let nextScene = segue.destination as? SearchViewController ,
+            let nextScene = segue.destination as? RoadDetailViewController ,
             let indexPath = self.tableView.indexPathForSelectedRow {
             let road = modelController.roads[indexPath.row]
             nextScene.modelController.road = road
         }
     }
     
-    func favouritesUpdated() {
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func favouritesChanged() {
         modelController.getFavourites()
     }
     

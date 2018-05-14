@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MajorRoads/Data/NetworkRequest.swift"
-            timestampString = "547942490.465993"
+            filePath = "MajorRoads/Search/RoadDetailViewController.swift"
+            timestampString = "547946777.178252"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "51"
             endingLineNumber = "51"
-            landmarkName = "convertToDictionary(text:)"
+            landmarkName = "favouritesChanged(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

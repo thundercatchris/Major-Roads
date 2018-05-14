@@ -16,16 +16,11 @@ protocol roadFound {
     func roadFound(road:Road)
 }
 
-protocol setupFavouriteButton {
-    func setupFavouriteButton()
-}
-
 class SearchViewModelController {
     let coreData = CoreDataCalls.sharedInstance
     let favourite = Favourites.sharedInstance
     var errorDelegate:displayError?
     var roadFoundDelegate:roadFound?
-    var setupFavouriteDelegate:setupFavouriteButton?
     
     var road: Road?
     
@@ -67,8 +62,8 @@ class SearchViewModelController {
                 coreData.deleteFavourite(id: id)
             }
             favourite.getIds()
-            road?.isFavourite = !(road?.isFavourite)!
-            setupFavouriteDelegate?.setupFavouriteButton()
+            let name = Notification.Name(checkFavouriteObserverKey)
+            NotificationCenter.default.post(name: name, object: nil, userInfo: ["name": id] as [String:String])
         }
     }
     

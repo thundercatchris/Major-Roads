@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		56E618B8CB11EB6934A52A58 /* Pods_MajorRoads.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B456F1504AFA3AD90A6051 /* Pods_MajorRoads.framework */; };
+		750A55F920A8FD3800AF2159 /* RoadDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750A55F820A8FD3700AF2159 /* RoadDetailViewController.swift */; };
 		75176AF020A6DBF700CAA688 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75176AEF20A6DBF700CAA688 /* AppDelegate.swift */; };
 		75176AF220A6DBF700CAA688 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75176AF120A6DBF700CAA688 /* SearchViewController.swift */; };
 		75176AF520A6DBF700CAA688 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75176AF320A6DBF700CAA688 /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		2E063E7A3A086865EFED1066 /* Pods-MajorRoads.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MajorRoads.release.xcconfig"; path = "Pods/Target Support Files/Pods-MajorRoads/Pods-MajorRoads.release.xcconfig"; sourceTree = "<group>"; };
 		38B456F1504AFA3AD90A6051 /* Pods_MajorRoads.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MajorRoads.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		409C7643DD5D060F1C53B93C /* Pods-MajorRoadsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MajorRoadsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MajorRoadsTests/Pods-MajorRoadsTests.release.xcconfig"; sourceTree = "<group>"; };
+		750A55F820A8FD3700AF2159 /* RoadDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoadDetailViewController.swift; sourceTree = "<group>"; };
 		75176AEC20A6DBF700CAA688 /* MajorRoads.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MajorRoads.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75176AEF20A6DBF700CAA688 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75176AF120A6DBF700CAA688 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 		75D9FA0C20A765FD0005CA4E /* Favourites */ = {
 			isa = PBXGroup;
 			children = (
+				750A55F820A8FD3700AF2159 /* RoadDetailViewController.swift */,
 				75176B2220A713A500CAA688 /* FavouritesViewController.swift */,
 				7523417E20A7465E0019D693 /* FavouritesViewModelController.swift */,
 				75176B2420A7141D00CAA688 /* RoadTableViewCell.swift */,
@@ -351,6 +354,7 @@
 			files = (
 				75176B2320A713A500CAA688 /* FavouritesViewController.swift in Sources */,
 				75176B2120A7096F00CAA688 /* SearchViewModelController.swift in Sources */,
+				750A55F920A8FD3800AF2159 /* RoadDetailViewController.swift in Sources */,
 				75176AF220A6DBF700CAA688 /* SearchViewController.swift in Sources */,
 				753F887220A7818C003EA6E5 /* Road.swift in Sources */,
 				75176B1B20A7024000CAA688 /* Favourites.swift in Sources */,

@@ -46,6 +46,7 @@ class FavouritesViewModelController {
         let endOfArray = (array.count - 1)
         for i in 0...endOfArray {
             if let dict = array[i] as? NSDictionary, let road = RoadHelper().roadFromDict(dict: dict) {
+                road.isFavourite = true
                 self.roads.append(road)
             }
         }
