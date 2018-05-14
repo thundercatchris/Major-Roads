@@ -61,7 +61,9 @@ class FavouritesViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func reloadTable() {
-        self.tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     override func didReceiveMemoryWarning() {
