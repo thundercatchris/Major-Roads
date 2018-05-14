@@ -9,9 +9,9 @@ TFL test
 
 Cocpods need to be installed
 
-A Device or iPhone simulator running iOS 10.3 or higher
+A Device or iPhone simulator running iOS 11.3 or higher
 
-Xcode 9.2 or higher
+Xcode 9.3 or higher
 
 In order to use it you will need to register for a developer key here: https://api-portal.tfl.gov.uk/ 
 
